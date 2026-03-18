@@ -33,6 +33,14 @@ fun main() {
 
     TODO(
         "Exercise 2 Conditionals implementation"
+        var score =90
+    when  {
+        score == 100 -> println("Perfect score!")
+        score < 0 ||  score > 100 -> println("Invalid score")
+        score in 0..49 -> println("You failed!")
+        score in 50..60 -> println("Just passed!")
+        else -> println("Well done!")
+    }
     )
 
     // ✅ EXERCISE 3 list and Loops:
@@ -43,6 +51,21 @@ fun main() {
 
     TODO(
         "Exercise 3 List and Loops implementation"
+        var favorite_fruits  = listOf("Mango", "Blueberry", "Pineapple")
+    println("List of fruits in Uppercase:")
+    for (favorite_fruit in favorite_fruits) {
+        println(favorite_fruit.uppercase())
+    }
+    println("\nTotal number of fruits: ${favorite_fruits.size}")
+    println("\nenter a fruit name: ")
+    val fruit = readln()
+//println(fruit)
+    if (fruit in favorite_fruits) {
+        println("Your fruit has been in the List!")
+    }
+    else{
+        println("Your fruit has not been in the List!")
+    }
     )
 
     // ✅EXERCISE 4 Elvis Operator:
@@ -52,6 +75,11 @@ fun main() {
 
     TODO(
         "Exercise 4 Elvis Operator implementation"
+        var nickname : String?= null
+    println(nickname?.length)
+    val displayName = nickname ?: "No nickname provided"
+    println("Status: $displayName")
+    nickname = "KotlinCoder"
     )
 
 }
