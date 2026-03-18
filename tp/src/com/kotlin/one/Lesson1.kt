@@ -14,6 +14,11 @@ fun main() {
 
     TODO(
         "Exercise 1 Variables implementation"
+        val city = "Port-au-Prince"
+        var temperature = 10
+        println("It is ${temperature}°C in ${city}")
+        temperature = 20
+        println("It is ${temperature}°C in ${city}")
     )
 
 
