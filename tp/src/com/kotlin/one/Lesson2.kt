@@ -1,91 +1,132 @@
 package com.android.one
 
-fun greet(name: String = "Student"): String {
-    TODO("Write a function that greets someone by name.")
+fun greet(name: String ): String {
+    //TODO("Write a function that greets someone by name.")
+    return "Hello, $name!"
 }
+greet("jakline")
 
 fun printInfo(name: String, age: Int = 18, city: String = "Paris") {
-    TODO("Print user info, with some default values. In the format: $name is $age years old and lives in $city.")
+    // TODO("Print user info, with some default values. In the format: $name is $age years old and lives in $city.")
+    println("$name is $age years old and lives in $city")
 }
+printInfo("polo",78,"jakmel")
 
 fun add(a: Int, b: Int): Int {
-    TODO("Function that adds two numbers and returns the result.")
+    // TODO("Function that adds two numbers and returns the result.")
+    return a + b
 }
+add(9, 8)
 
 fun isEven(number: Int): Boolean {
-    TODO("Check if a number is even.")
+    //TODO("Check if a number is even.")
+    return number % 2 == 0
 }
+isEven(4)
 
 fun areaOfCircle(radius: Double): Double {
-    TODO(
-        "Compute area of a circle using π * r²."
-    )
+    //TODO(        "Compute area of a circle using π * r²."    )
+    return radius * radius *3.1415926535
 }
+areaOfCircle(9.9)
 
 // TODO 5: Return a letter grade based on score.
 fun grade(score: Int): String {
-    TODO(
+  /*  TODO(
         "Return a letter grade based on score. \uD83D\uDD27 Use if or when" +
                 "- Score >= 90: 'A'\n" +
                 "- Score >= 80: 'B'\n" +
                 "- Score >= 70: 'C'\n" +
                 "- Score >= 60: 'D'\n" +
                 "- Below 60: 'F'"
-    )
+    )*/
+    return when {
+        score >= 90 -> "Score >= 90: 'A'\n"
+        score >= 80 -> "Score >= 80: 'B'"
+        score >= 70 -> "Score >= 70: 'C'"
+        score >= 60 -> "Score >= 60: 'D'"
+        else -> "Below 60: 'F'"
+    }
+}
+grade(45)
 }
 
 fun maxOfThree(a: Int, b: Int, c: Int): Int {
-    TODO(
-        "Return the maximum of three numbers."
-    )
+   // TODO(        "Return the maximum of three numbers."    )
+    return when{
+        a > b && a > c -> a
+        b > a && b > c -> b
+        else -> c
+    }
 }
+maxOfThree(4,8,5)
+
 
 fun toFahrenheit(celsius: Double): Double {
-    TODO("Convert Celsius to Fahrenheit.")
+    // TODO("Convert Celsius to Fahrenheit.")
+    return (celsius * 9/5) + 32
 }
+toFahrenheit(3.0)
 
 
 fun applyDiscount(price: Double, discount: Double = 0.1): Double {
-    TODO(
-        "Apply a discount (default 10%) to a price."
-    )
+    //  TODO(  "Apply a discount (default 10%) to a price." )
+    return price * (1 - discount)
 }
+applyDiscount(100.00)
 
 
 fun capitalizeWords(sentence: String): String {
-    TODO(
-        "Capitalize the first letter of each word in a sentence."
-    )
+    // TODO(   "Capitalize the first letter of each word in a sentence."   )
+    return sentence.split(" ").joinToString(" ") {
+            phrase -> phrase.lowercase().replaceFirstChar { it.uppercase() }
+    }
 }
+capitalizeWords("estilj zoijames is the best")
 
 fun bmi(weight: Double, height: Double): Double {
-    TODO(
-        "Compute BMI using the formula: weight / height²"
-    )
+    // TODO(        "Compute BMI using the formula: weight / height²"    )
+    return weight / (height * height)
+
 }
+bmi(10.0,9.0)
 
 fun passwordStrength(password: String): Boolean {
-    TODO(
-        "Check password strength:\n" +
-                "- At least 8 characters\n" +
-                "- Contains uppercase letter\n" +
-                "- Contains lowercase letter\n" +
-                "- Contains a number"
-    )
+    /*  TODO(
+          "Check password strength:\n" +
+                  "- At least 8 characters\n" +
+                  "- Contains uppercase letter\n" +
+                  "- Contains lowercase letter\n" +
+                  "- Contains a number"
+      )*/
+    val minicaratere = password.length >=8
+    val Majuscule =password.any{ it.isUpperCase()}
+    val miniscule = password.any{ it.isLowerCase()}
+    val nombre = password.any{ it.isDigit()}
+    return minicaratere && miniscule && nombre && Majuscule
 }
+passwordStrength("polopojP111")
 
 fun filterEvenNumbers(numbers: List<Int>): List<Int> {
-    TODO(
-        "Return a list of even numbers from the input list."
-    )
+    // TODO(        "Return a list of even numbers from the input list."    )
+    return numbers.filter { isEven(it) }
 }
+filterEvenNumbers(listOf(2, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 
 
 fun factorial(n: Int): Int {
-    TODO(
-        "Compute the factorial of a number n recursively."
-    )
+//    TODO(        "Compute the factorial of a number n recursively."    )
+    var facto=0
+    if( n == 0) return 1
+    else
+    {
+        for (i in n downTo 1) {
+            facto = n * ( n - 1 )
+        }
+        return facto
+    }
 }
+factorial(5)
 
 fun fibonacci(n: Int): Int {
     TODO(
